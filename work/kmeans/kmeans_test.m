@@ -14,8 +14,8 @@ index=findClosestCen(fea,centroids,dis_flag);
 [rate,centroids]=changeCen(fea,index,centroids,num_person);
 histogram(index)
 end
-figure;
-displayData(fea(1:165,:));
+% figure;
+% displayData(fea(1:165,:));
 figure;
 displayData(centroids(1:15,:));
  rate
