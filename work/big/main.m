@@ -18,7 +18,7 @@ pca_test_data= project(test_data,pca_u,restore_dim);
 %% 神经网络分类
 %net为训练后网络，nn_accuracy为神经网络测试集正确率
 
-[net,nn_accuracy] = neuralNetwork(pca_train_data,train_label,pca_test_data,test_label);
+[nn_net,nn_accuracy] = neuralNetwork(pca_train_data,train_label,pca_test_data,test_label);
 
 %% svm分类
 %svm_model为训练后模型，svm_accuracy为支持向量机测试正确率
