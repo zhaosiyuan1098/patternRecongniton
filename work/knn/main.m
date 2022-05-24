@@ -17,8 +17,8 @@ accu=calcuAccuracy(index,train_gnd,test_gnd)
 % figure;
 % displayData(train_fea(1:num_train_person,:));
 figure;
-displayData(norm_fea(1:num_train_person,:));
+displayData(norm_fea(1:100,:));
  figure;
- displayData(u(:, 1:200)');
+ displayData(u(:, 1:100)');
 
 

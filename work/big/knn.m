@@ -1,5 +1,5 @@
 function [knn_accuracy] = knn(pca_train_data,train_label,pca_test_data,test_label,k)
-index=knnsearch(pca_train_data,pca_test_data,'k', k, 'Distance', 'cityblock');
+index=knnsearch(pca_train_data,pca_test_data,'k', k, 'Distance', 'euclidean');
 wrong = 0;
 correct = 0;
 for i = 1:length(index)

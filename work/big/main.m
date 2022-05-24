@@ -9,16 +9,18 @@ test_rate=0.1;
 featureData=featureExtra(data);
 [train_data,train_label,test_data,test_label]=divideTrainTest(featureData,labels,test_rate);
 %% pca降维处理
-%pca_store_rate为pca保留特征占总特征的比例
+% pca_store_rate为pca保留特征占总特征的比例
 
 pca_restore_rate=0.95;
 [pca_u,restore_dim] = usv(train_data,pca_restore_rate);
 pca_train_data= project(train_data,pca_u,restore_dim);
 pca_test_data= project(test_data,pca_u,restore_dim);
+
+
 %% 神经网络分类
 %net为训练后网络，nn_accuracy为神经网络测试集正确率
 
-[nn_net,nn_accuracy] = neuralNetwork(pca_train_data,train_label,pca_test_data,test_label);
+% [nn_net,nn_accuracy] = neuralNetwork(pca_train_data,train_label,pca_test_data,test_label);
 
 %% svm分类
 %svm_model为训练后模型，svm_accuracy为支持向量机测试正确率
@@ -28,4 +30,5 @@ pca_test_data= project(test_data,pca_u,restore_dim);
 %% knn分类
 %knn_accuracy为最近邻算法分类正确率
 
-knn_accuracy = knn(pca_train_data,train_label,pca_test_data,test_label,7);
+% knn_accuracy = knn(pca_train_data,train_label,pca_test_data,test_label,5);
+
